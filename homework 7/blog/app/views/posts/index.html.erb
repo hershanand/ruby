@@ -1,0 +1,5 @@
+<h1>Recent Posts</h1>
+<% @posts.each do |x| %>
+	<h2>Title: <%= link_to x.title, x %> </h2>
+	<p> <%= x.content %> </p>
+<% end %>

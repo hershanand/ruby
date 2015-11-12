@@ -1,0 +1,10 @@
+<h1>Author's List</h1>
+<%= link_to 'Add an Author', new_author_path %><br>
+<ul>
+<% @authors.each do |x| %>
+	<li> <%= x.first_name %>
+		<%= x.last_name %>
+		[<%= link_to 'Update', edit_author_path(x) %>]
+		[<%= link_to('Delete', x, method: :delete) %>] </li>
+<% end %>
+</ul>

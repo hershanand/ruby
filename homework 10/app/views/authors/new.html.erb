@@ -1,0 +1,9 @@
+<h1>Create a new author!</h1>
+<%= form_for @author do |f| %>
+	First Name: <%= f.text_field :first_name %><br>
+	Last Name: <%= f.text_field :last_name %><br>
+	<%= f.submit %>
+<% end %>
+
+<br>
+<%= link_to 'Back', root_path %>

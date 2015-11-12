@@ -1,0 +1,7 @@
+<h1>Recent Posts</h1>
+[<%= link_to 'Create Post', new_post_path %>]
+<% @posts.each do |x| %>
+	<h2>Title: <%= link_to x.title, x %> </h2>
+	<p> <%= x.content %><br>
+	[<%= link_to('Delete Post', x, method: :delete) %>]</p>
+<% end %>

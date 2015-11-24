@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job's Board</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class='navbar navbar-default'>
+<div class='container'>
+	<div class='navbar-brand'>Rails Jobs</div>
+	<ul class='nav navbar-nav'>
+	<% Category.all.each do |cat| %>
+		<li><%= link_to cat.name, jobs_path(category: cat.name) %></li>
+	<% end %>
+	<%= link_to "New Job", new_job_path, class: "navbar-text navbar-right navbar-link" %>
+	</ul>
+	</div>
+</nav>
+<div class='container'>
+	<%= yield %>
+</div>
+
+</body>
+</html>
